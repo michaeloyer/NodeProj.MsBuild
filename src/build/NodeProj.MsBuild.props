@@ -1,0 +1,9 @@
+<Project>
+    <PropertyGroup>
+        <!-- Default values. Can be Overwritten -->
+        <NpmInstallStamp>obj/.npm-install-stamp</NpmInstallStamp>
+        <NpmBuildCommand>build</NpmBuildCommand>
+        <UseYarn>false</UseYarn>
+    </PropertyGroup>
+
+</Project>

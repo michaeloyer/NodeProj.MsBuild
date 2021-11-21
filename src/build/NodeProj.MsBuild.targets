@@ -1,0 +1,16 @@
+<Project>
+    <Target Name="CleanNpmInstallStamp" AfterTargets="AfterClean">
+        <Exec Command="rm $(NpmInstallStamp)"/>
+    </Target>
+    
+    <Target Name="NpmInstall" Inputs="package.json" Outputs="$(NpmInstallStamp)">
+        <Exec Condition="!$(UseYarn)" Command="npm install" />
+        <Exec Condition="$(UseYarn)" Command="yarn" />
+        <Touch Files="$(NpmInstallStamp)" AlwaysCreate="true"/>
+    </Target>
+
+    <Target Name="NpmRunBuild" DependsOnTargets="NpmInstall" BeforeTargets="BeforeBuild">
+        <Exec Condition="!$(UseYarn)" Command="npm run $(NpmBuildCommand)" />
+        <Exec Condition="$(UseYarn)" Command="yarn $(NpmBuildCommand)" />
+    </Target>
+</Project>

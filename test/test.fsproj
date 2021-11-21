@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <NpmInstallStamp>obj/.custom-npm-install-stamp</NpmInstallStamp>
+      <UseYarn>true</UseYarn>
+  </PropertyGroup>
+
+    <Target Name="CleanNpmInstallStamp" AfterTargets="AfterClean">
+        <Delete Files="$(NpmInstallStamp)" />
+    </Target>
+
+  <ItemGroup>
+    <PackageReference Include="NodeProj.MsBuild" Version="*" />
+  </ItemGroup>
+    
+</Project>

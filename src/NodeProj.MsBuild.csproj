@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageId>NodeProj.MsBuild</PackageId>
+        <Version>0.1.3</Version>
+        <RootNamespace>Node.MsBuild</RootNamespace>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Content Include="build/*" PackagePath="build/" />
+    </ItemGroup>
+</Project>
